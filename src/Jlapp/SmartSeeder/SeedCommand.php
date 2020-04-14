@@ -56,7 +56,7 @@ class SeedCommand extends Command
 
         $path = database_path(config('smart-seeder.seedDir'));
 
-        $env = $this->option('env');
+        $env = $this->option('env') ?: $this->migrator->getEnv();
 
         $this->migrator->setEnv($env);
 
